@@ -1,0 +1,125 @@
+-- DROP TABLE Digicolor_FastnessTentativeRatingProducts
+CREATE TABLE Digicolor_FastnessTentativeRatingProducts
+(
+	Id INT IDENTITY(1,1) PRIMARY KEY,
+	ProductName VARCHAR(8000),
+	ProductCode VARCHAR(500),
+	ProductRange NVARCHAR(50)
+)
+
+-- DROP TABLE Digicolor_FastnessTechnicalData 
+CREATE TABLE Digicolor_FastnessTechnicalData (
+    ResultId INT PRIMARY KEY IDENTITY(1,1),
+    ProductId INT FOREIGN KEY REFERENCES   Digicolor_FastnessTentativeRatingProducts(Id),
+    Depth NVARCHAR(10),
+	FastnessName  VARCHAR(1000),
+    TestMethod NVARCHAR(100),
+	Staning NVARCHAR(10),    
+	Value NVARCHAR(50)
+);
+
+
+INSERT INTO Digicolor_FastnessTentativeRatingProducts VALUES ('JAKAZOL DEEP SEA EF','46001001','EF')
+SELECT * FROM Digicolor_FastnessTentativeRatingProducts
+
+INSERT INTO Digicolor_FastnessTechnicalData VALUES (1,'3.40%','Acid Spotting','ISO 105 E05',NULL,'3-4')
+INSERT INTO Digicolor_FastnessTechnicalData VALUES (1,'3.40%','Alkali Spotting','ISO 105 E06',NULL,'3-4 R/BI')
+INSERT INTO Digicolor_FastnessTechnicalData VALUES (1,'3.40%','Bleach safe by Home Laundering','AATCC 135',NULL,NULL)
+
+INSERT INTO Digicolor_FastnessTechnicalData VALUES (1,'3.40%','Bleaching Hydrogen Peroxide','ISO 105 N02','SC','4')
+INSERT INTO Digicolor_FastnessTechnicalData VALUES (1,'3.40%','Bleaching Hydrogen Peroxide','ISO 105 N02','CS','4-5')
+INSERT INTO Digicolor_FastnessTechnicalData VALUES (1,'3.40%','Bleaching Hydrogen Peroxide','ISO 105 N02','NS','4-5(V)')
+
+INSERT INTO Digicolor_FastnessTechnicalData VALUES (1,'3.40%','Bleaching Hypochloride','ISO 105 N01',NULL,'3-4 DI')
+
+INSERT INTO Digicolor_FastnessTechnicalData VALUES (1,'3.40%','BPO ( 10% Benzoyl Peroxide )',NULL,'SC','4-5')
+INSERT INTO Digicolor_FastnessTechnicalData VALUES (1,'3.40%','BPO ( 10% Benzoyl Peroxide )',NULL,'SC','4')
+INSERT INTO Digicolor_FastnessTechnicalData VALUES (1,'3.40%','BPO ( 10% Benzoyl Peroxide )',NULL,'SC','3-4')
+
+INSERT INTO Digicolor_FastnessTechnicalData VALUES (1,'3.40%','Chlorine Bleach','AATCC 150',NULL,NULL)
+
+
+
+INSERT INTO Digicolor_FastnessTechnicalData (ProductId, Depth, FastnessName, TestMethod, Staning, Value) VALUES
+(1, '3.40%', 'Color Fastness to Chlorinated Water', 'M & S C12A', NULL, '3-4'),
+(1, '3.40%', 'Color Fastness to Light', 'AATCC 16.3 20 AFU', NULL, '3.5'),
+(1, '3.40%', 'Color Fastness to Light', 'AATCC 16E 40 AFU', NULL, '3'),
+(1, '3.40%', 'Color Fastness to Light', 'ISO 105 B02 (Grade 4)', NULL, '4'),
+(1, '3.40%', 'Color Fastness to Light', 'ISO 105 B02 (Grade 6)', NULL, '3-4'),
+(1, '3.40%', 'Color Fastness to Weathering', 'ISO 105 B04 (Grade 4)', NULL, '3'),
+(1, '3.40%', 'Colorfastness to Burnt Gas Fumes', 'AATCC 23', NULL, '4'),
+(1, '3.40%', 'Colorfastness to Burnt Gas Fumes', 'ISO 105 GO2', NULL, '3-4'),
+(1, '3.40%', 'Colorfastness to Sea Water', 'AATCC 106', 'SC', '4.5'),
+(1, '3.40%', 'Colorfastness to Sea Water', 'AATCC 106', 'CS', '4.5'),
+(1, '3.40%', 'Colorfastness to Sea Water', 'AATCC 106', 'NS', '4.5'),
+(1, '3.40%', 'Fastness to Chlorinated Water', 'AATCC 162', NULL, '3-4'),
+(1, '3.40%', 'Fastness to Chlorinated Water', 'AATCC 188 35ppm', NULL, '4'),
+(1, '3.40%', 'Fastness to Chlorinated Water', 'ISO 105 E03-20ppm', NULL, '3-4'),
+(1, '3.40%', 'Fastness to Chlorinated Water', 'JIS L 0884-10 ppm', NULL, '4'),
+(1, '3.40%', 'Fastness to Chlorinated Water', 'JIS L 0884-20 ppm', NULL, '4'),
+(1, '3.40%', 'Hot Pressing', 'ISO X11 Dry / Effect Immediately', 'SC', '4'),
+(1, '3.40%', 'Hot Pressing', 'ISO X11 Dry / Effect after 4 Hrs', 'SC', '4-5'),
+(1, '3.40%', 'Hot Pressing', 'ISO X11 Wet', 'CS', '4-5'),
+(1, '3.40%', 'Perborate Fastness', 'M&S C10', NULL, '4'),
+(1, '3.40%', 'Perborate Wet Fade Light', 'M&S C9A', NULL, '4'),
+(1, '3.40%', 'Perspiration Fastness', 'AATCC 15', 'SC', '4.5'),
+(1, '3.40%', 'Perspiration Fastness', 'AATCC 15', 'CS', '4.5'),
+(1, '3.40%', 'Perspiration Fastness', 'AATCC 15', 'NS', '4.5'),
+(1, '3.40%', 'Perspiration Fastness', 'ISO 105 E04 - Acid', 'SC', '4-5'),
+(1, '3.40%', 'Perspiration Fastness', 'ISO 105 E04 - Acid', NULL, '4-5'),
+(1, '3.40%', 'Perspiration Fastness', 'ISO 105 E04 - Acid', 'NS', '4-5'),
+(1, '3.40%', 'Perspiration Fastness', 'ISO 105 E04 - Alkaline', 'SC', '4-5'),
+(1, '3.40%', 'Perspiration Fastness', 'ISO 105 E04 - Alkaline', 'CS', '4-5'),
+(1, '3.40%', 'Perspiration Fastness', 'ISO 105 E04 - Alkaline', 'NS', '4-5'),
+(1, '3.40%', 'Perspiration Fastness', 'M&S C7 - Acid', 'SC', '4-5'),
+(1, '3.40%', 'Perspiration Fastness', 'M&S C7 - Acid', 'CS', '4-5'),
+(1, '3.40%', 'Perspiration Fastness', 'M&S C7 - Acid', 'NS', '4-5'),
+(1, '3.40%', 'Perspiration Fastness', 'M&S C7 - Alkaline', 'SC', '4-5'),
+(1, '3.40%', 'Perspiration Fastness', 'M&S C7 - Alkaline', 'CS', '4-5'),
+(1, '3.40%', 'Perspiration Fastness', 'M&S C7 - Alkaline', 'NS', '4-5'),
+(1, '3.40%', 'Perspiration Light Fastness', 'AATCC 125', NULL, '2.5'),
+(1, '3.40%', 'Perspiration Light Fastness', 'ISO 105 B07 (ACID)Grade 4', NULL, '3-4'),
+(1, '3.40%', 'Perspiration Light Fastness', 'ISO 105 B07 (ALKALINE)Grade 4', NULL, '3-4'),
+(1, '3.40%', 'Repeated Domestic Washing', 'ISO 105 X04', 'SC', '3-4 Dk'),
+(1, '3.40%', 'Repeated Domestic Washing', 'ISO 105 X04', 'CS', '4'),
+(1, '3.40%', 'Rubbing Fastness', 'AATCC 8 - Dry', NULL, '4-5'),
+(1, '3.40%', 'Rubbing Fastness', 'AATCC 8 - Wet', NULL, '3-4'),
+(1, '3.40%', 'Rubbing Fastness', 'ISO 105 X12 - Dry', NULL, '4-5'),
+(1, '3.40%', 'Rubbing Fastness', 'ISO 105 X12 - Wet', NULL, '3-4'),
+(1, '3.40%', 'Rubbing Fastness', 'M&S C8 - Dry', NULL, '4-5'),
+(1, '3.40%', 'Rubbing Fastness', 'M&S C8 - Wet', NULL, '3-4'),
+(1, '3.40%',  'Washing Fastness', 'AATCC 61 2A, 49°C/120°F', 'SC', '4.5'),
+(1, '3.40%',  'Washing Fastness', 'AATCC 61 2A, 49°C/120°F', 'CS', '4.5'),
+(1, '3.40%',  'Washing Fastness', 'AATCC 61 2A, 49°C/120°F', 'NS', '4.5'),
+(1, '3.40%',  'Washing Fastness', 'AATCC 61 3A, 71°C', 'SC', '4.5'),
+(1, '3.40%',  'Washing Fastness', 'AATCC 61 3A, 71°C', 'CS', '4'),
+(1, '3.40%',  'Washing Fastness', 'AATCC 61 3A, 71°C', 'NS', '4.5'),
+(1, '3.40%',  'Washing Fastness', 'ISO 105-C10 C(3) - 60°C', 'SC', '4'),
+(1, '3.40%',  'Washing Fastness', 'ISO 105-C10 C(3) - 60°C', 'CS', '4-5'),
+(1, '3.40%',  'Washing Fastness', 'ISO 105-C10 C(3) - 60°C', 'NS', '4-5'),
+(1, '3.40%',  'Washing Fastness', 'ISO 105-C10 D(4) - 95°C', 'SC', '4'),
+(1, '3.40%',  'Washing Fastness', 'ISO 105-C10 D(4) - 95°C', 'CS', '4-5'),
+(1, '3.40%',  'Washing Fastness', 'ISO 105-C10 D(4) - 95°C', 'NS', '4-5(V)'),
+(1, '3.40%',  'Washing Fastness', 'ISO 105-CO6-B25, 50°C/122°F', 'SC', '4-5'),
+(1, '3.40%',  'Washing Fastness', 'ISO 105-CO6-B25, 50°C/122°F', 'CS', '4-5'),
+(1, '3.40%',  'Washing Fastness', 'ISO 105-CO6-B25, 50°C/122°F', 'NS', '4-5'),
+(1, '3.40%',  'Washing Fastness', 'ISO 105-CO6/C25, 60°C', 'SC', '4-5'),
+(1, '3.40%',  'Washing Fastness', 'ISO 105-CO6/C25, 60°C', 'CS', '4-5'),
+(1, '3.40%',  'Washing Fastness', 'ISO 105-CO6/C25, 60°C', 'NS', '4-5'),
+(1, '3.40%',  'Washing Fastness', 'ISO 105-CO6/E25, 95°C', 'SC', '4'),
+(1, '3.40%',  'Washing Fastness', 'ISO 105-CO6/E25, 95°C', 'CS', '4-5'),
+(1, '3.40%',  'Washing Fastness', 'ISO 105-CO6/E25, 95°C', 'NS', '4-5(V)'),
+(1, '3.40%',  'Washing Fastness', 'M&S C4A - 60°C', 'SC', '4-5'),
+(1, '3.40%',  'Washing Fastness', 'M&S C4A - 60°C', 'CS', '4-5'),
+(1, '3.40%',  'Washing Fastness', 'M&S C4A - 60°C', 'NS', '4-5'),
+(1, '3.40%', 'Water Fastness', 'AATCC 107', 'SC', '4.5'),
+(1, '3.40%', 'Water Fastness', 'AATCC 107', 'CS', '4.5'),
+(1, '3.40%', 'Water Fastness', 'AATCC 107', 'NS', '4.5'),
+(1, '3.40%', 'Water Fastness', 'ISO 105-E01', 'SC', '4-5'),
+(1, '3.40%', 'Water Fastness', 'ISO 105-E01', 'CS', '4-5'),
+(1, '3.40%', 'Water Fastness', 'ISO 105-E01', 'NS', '4-5');
+
+
+
+SELECT prod.ProductCode,prod.ProductName,Depth,FastnessName,TestMethod,Staning,Value  FROM Digicolor_FastnessTentativeRatingProducts AS prod WITH(NOLOCK)
+INNER JOIN Digicolor_FastnessTechnicalData AS mainData WITH(NOLOCK) ON prod.Id = mainData.ProductId
